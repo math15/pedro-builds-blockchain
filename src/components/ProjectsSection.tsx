@@ -1,4 +1,7 @@
 import { ExternalLink, Github, Zap, Shield, TrendingUp, Users, ArrowRight } from "lucide-react";
+import defiPlatformImg from "@/assets/project-defi-platform.jpg";
+import nftMarketplaceImg from "@/assets/project-nft-marketplace.jpg";
+import bridgeNetworkImg from "@/assets/project-bridge-network.jpg";
 
 const ProjectsSection = () => {
   const projects = [
@@ -9,6 +12,7 @@ const ProjectsSection = () => {
       technologies: ["Solidity", "React", "Node.js", "PostgreSQL"],
       category: "DeFi",
       icon: TrendingUp,
+      image: defiPlatformImg,
       gradient: "from-primary to-primary/60",
       glowColor: "primary"
     },
@@ -19,6 +23,7 @@ const ProjectsSection = () => {
       technologies: ["Solidity", "IPFS", "React", "Web3.js"],
       category: "NFT",
       icon: Users,
+      image: nftMarketplaceImg,
       gradient: "from-accent to-accent/60",
       glowColor: "accent"
     },
@@ -29,6 +34,7 @@ const ProjectsSection = () => {
       technologies: ["Rust", "Solidity", "Cosmos SDK", "TypeScript"],
       category: "Infrastructure",
       icon: Shield,
+      image: bridgeNetworkImg,
       gradient: "from-secondary to-secondary/60",
       glowColor: "secondary"
     }
@@ -64,15 +70,29 @@ const ProjectsSection = () => {
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Project Card */}
-              <div className="card-glow h-full cursor-pointer transition-all duration-500 group-hover:scale-105">
+              <div className="card-glow h-full cursor-pointer transition-all duration-500 group-hover:scale-105 overflow-hidden">
+                {/* Project Image */}
+                <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-3 right-3">
+                    <span className={`px-3 py-1 bg-background/90 backdrop-blur-sm text-${project.glowColor} rounded-lg border border-${project.glowColor}/20 text-sm font-medium`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
                 {/* Header */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <div className={`p-3 rounded-xl bg-gradient-to-br ${project.gradient}`}>
                     <project.icon className="w-6 h-6 text-background" />
                   </div>
-                  <span className={`px-3 py-1 bg-${project.glowColor}/10 text-${project.glowColor} rounded-lg border border-${project.glowColor}/20 text-sm font-medium`}>
-                    {project.category}
-                  </span>
                 </div>
 
                 {/* Content */}
