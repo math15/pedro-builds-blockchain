@@ -46,10 +46,16 @@ const IntroSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <button className="btn-neon">
+                <button 
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-neon"
+                >
                   See My Work
                 </button>
-                <button className="btn-ghost">
+                <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-ghost"
+                >
                   Let's Talk
                 </button>
               </div>

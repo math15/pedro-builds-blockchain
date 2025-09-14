@@ -93,13 +93,22 @@ const ContactSection = () => {
                 <h3 className="text-xl font-bold text-glow-secondary">Connect</h3>
                 
                 <div className="flex gap-4">
-                  <button className="p-3 bg-muted rounded-lg hover:bg-primary/20 transition-colors group">
+                  <button 
+                    onClick={() => window.open('https://github.com', '_blank')}
+                    className="p-3 bg-muted rounded-lg hover:bg-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-[var(--glow-primary)] group"
+                  >
                     <Github className="w-5 h-5 group-hover:text-primary transition-colors" />
                   </button>
-                  <button className="p-3 bg-muted rounded-lg hover:bg-accent/20 transition-colors group">
+                  <button 
+                    onClick={() => window.open('https://linkedin.com', '_blank')}
+                    className="p-3 bg-muted rounded-lg hover:bg-accent/20 transition-all duration-300 hover:scale-110 hover:shadow-[var(--glow-accent)] group"
+                  >
                     <Linkedin className="w-5 h-5 group-hover:text-accent transition-colors" />
                   </button>
-                  <button className="p-3 bg-muted rounded-lg hover:bg-secondary/20 transition-colors group">
+                  <button 
+                    onClick={() => window.open('https://twitter.com', '_blank')}
+                    className="p-3 bg-muted rounded-lg hover:bg-secondary/20 transition-all duration-300 hover:scale-110 hover:shadow-[var(--glow-secondary)] group"
+                  >
                     <Twitter className="w-5 h-5 group-hover:text-secondary transition-colors" />
                   </button>
                 </div>
@@ -201,9 +210,9 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <button type="submit" className="btn-cyber w-full group">
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                  <button type="submit" className="btn-cyber w-full group flex items-center justify-center gap-2">
+                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span>Send Message</span>
                   </button>
                 </form>
               </div>

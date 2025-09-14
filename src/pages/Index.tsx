@@ -10,8 +10,12 @@ const Index = () => {
       <HeroSection />
       <IntroSection />
       <ExperienceSection />
-      <ProjectsSection />
-      <ContactSection />
+      <div id="projects">
+        <ProjectsSection />
+      </div>
+      <div id="contact">
+        <ContactSection />
+      </div>
     </div>
   );
 };

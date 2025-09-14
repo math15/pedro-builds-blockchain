@@ -44,11 +44,17 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-cyber group">
+              <button 
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-cyber group"
+              >
                 Explore My Work
                 <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </button>
-              <button className="btn-ghost group">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-ghost group"
+              >
                 <Zap className="w-5 h-5 mr-2" />
                 Get in Touch
               </button>
